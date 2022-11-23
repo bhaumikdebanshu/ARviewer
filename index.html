@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+  </head>
+
+<body>
+  <div id="container">
+    <h1>AR Viewer</h1>
+    <p>The AR viewer be integrated into existing e-commerce websites and can be used to view products in 3D in customer's physical space.</p>
+    <img id="product-image" src="product.webp">
+    <model-viewer id="3d-model" ar disable-tap disable-pan camera-controls touch-action="pan-y" auto-rotate xr-environment src="hydrating-cleanser-8oz-reduced.glb" alt="A 3D model of an astronaut">
+        <button id="ar-primary-button" slot="ar-button" style="display: none; background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+          Activate AR
+        </button>
+      </model-viewer>
+    <button id="ar-button" onclick="document.getElementById('ar-primary-button').click()">
+        View product in AR
+    </button>
+  <div id="instructions">
+    <h4>Instructions for AR</h4>  
+    <p style="font-size: 12px;">1. Use 2 finger to pinch and zoom</p>
+    <p style="font-size: 12px;">2. Use 2 finger to rotate</p>
+  </div>  
+  </div>
+
+  
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+</body>
+
